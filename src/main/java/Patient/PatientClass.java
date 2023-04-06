@@ -2,6 +2,7 @@ package Patient;
 
 public class PatientClass {
     private int ID;
+
     private String name;
     private String dateOfBirthday;
     private String dateOfTreatment;

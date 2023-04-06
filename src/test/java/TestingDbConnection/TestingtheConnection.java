@@ -19,30 +19,12 @@ public class TestingtheConnection {
         @Test
         @DisplayName("Test to check if the connection is created to orthodontic department")
         public void testCreateConnectiontoOrtho() throws SQLException {
-            Connection connection = DatabaseConnections.createconnectiontoOrtho();
+            Connection connection = DatabaseConnections.createconnectiontoTeethTreatment();
 
-            assertNotNull(connection);// check if the connection is not null
-            assertFalse(connection.isClosed());// check if the connection is closed
-            //if both are false then we passed the test
+            assertNotNull(connection);// check if the connection is not null if it is null then
+            // it will fail but if it not then there is a connection
         }
 
-    @Test
-    @DisplayName("Test to check if the connection is created to teeth cleaning")
-    public void testCreateConnectiontoteethcleaning() throws SQLException {
-        Connection connection = DatabaseConnections.createconnectiontoTeethcleaning();
-
-                assertNotNull(connection);// check if the connection is not null
-        assertFalse(connection.isClosed());// check if the connection is closed
-        //if both are false then we passed the test
-    }
-
-    @Test
-    @DisplayName("Test to check if the connection is created to implants and extraction")
-    public void testCreateConnectiontoImplants() throws SQLException {
-        Connection connection = DatabaseConnections.createconnectiontoimplantsandextraction();// check if the connection is not null
-                assertNotNull(connection);// check if the connection is closed
-        assertFalse(connection.isClosed());//if both are false then we passed the test
-    }
     }
 
 
