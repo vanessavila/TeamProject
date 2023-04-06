@@ -1,14 +1,16 @@
-public class Patient {
+package Patient;
+
+public class PatientClass {
     private int ID;
     private String name;
     private String dateOfBirthday;
     private String dateOfTreatment;
     private int age;
     private String allergies;
-    private boolean specialNeeds;
+    private boolean needspecialNeeds;
     private String typeOfTreatment;
 
-    public Patient() {
+    public PatientClass() {
 
     }
 
@@ -60,12 +62,12 @@ public class Patient {
         this.allergies = allergies;
     }
 
-    public boolean isSpecialNeeds() {
-        return specialNeeds;
+    public boolean getSpecialNeeds() {
+        return needspecialNeeds;
     }
 
     public void setSpecialNeeds(boolean specialNeeds) {
-        this.specialNeeds = specialNeeds;
+        this.needspecialNeeds = specialNeeds;
     }
 
     public String getTypeOfTreatment() {
@@ -74,5 +76,19 @@ public class Patient {
 
     public void setTypeOfTreatment(String typeOfTreatment) {
         this.typeOfTreatment = typeOfTreatment;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Patient" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", dateOfBirthday='" + dateOfBirthday + '\'' +
+                ", dateOfTreatment='" + dateOfTreatment + '\'' +
+                ", age=" + age +
+                ", allergies='" + allergies + '\'' +
+                ", specialNeeds=" + needspecialNeeds +
+                ", typeOfTreatment='" + typeOfTreatment + '\'';
     }
 }
