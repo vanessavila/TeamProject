@@ -2,10 +2,10 @@ package Patient;
 
 public class PatientClass {
     private int ID;
-
     private String name;
     private String dateOfBirthday;
     private String dateOfTreatment;
+    private String address;
     private int age;
     private String allergies;
     private boolean needspecialNeeds;
@@ -13,6 +13,22 @@ public class PatientClass {
 
     public PatientClass() {
 
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public boolean isNeedspecialNeeds() {
+        return needspecialNeeds;
+    }
+
+    public void setNeedspecialNeeds(boolean needspecialNeeds) {
+        this.needspecialNeeds = needspecialNeeds;
     }
 
     public int getID() {

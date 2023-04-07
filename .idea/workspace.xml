@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="TestingtheGetterandSetter" />
+    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="TestingtheGetterandSetter">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="MakingitintooneDatabase" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,24 +44,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Java spring/JDBC/Lib/mysql-connector-j-8.0.32.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Java spring/JDBC/Lib/mysql-connector-j-8.0.32.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.Unnamed">
+}]]></component>
+  <component name="RunManager" selected="JUnit.TestingtheConnection">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="JdbcProjectforschool" />
@@ -98,18 +101,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestingtheConnection.testCreateConnectiontoOrtho" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JdbcProjectforschool" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="TestingDbConnection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="TestingDbConnection" />
+      <option name="MAIN_CLASS_NAME" value="TestingDbConnection.TestingtheConnection" />
+      <option name="METHOD_NAME" value="testCreateConnectiontoOrtho" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Unnamed" />
+      <item itemvalue="JUnit.TestingtheConnection.testCreateConnectiontoOrtho" />
       <item itemvalue="JUnit.TestingConnection.testCreateConnection" />
       <item itemvalue="JUnit.TestingtheConnection" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestingtheConnection" />
+        <item itemvalue="JUnit.TestingtheConnection.testCreateConnectiontoOrtho" />
         <item itemvalue="JUnit.TestingConnection.testCreateConnection" />
         <item itemvalue="JUnit.TestingtheConnection" />
         <item itemvalue="JUnit.TestingConnection.testCreateConnection" />
-        <item itemvalue="JUnit.TestingtheConnection" />
       </list>
     </recent_temporary>
   </component>
@@ -123,6 +143,9 @@
       <updated>1680022925652</updated>
       <workItem from="1680022926839" duration="4273000" />
       <workItem from="1680739012507" duration="2390000" />
+      <workItem from="1680812460388" duration="167000" />
+      <workItem from="1680812656277" duration="62000" />
+      <workItem from="1680826250192" duration="332000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
