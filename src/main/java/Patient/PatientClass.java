@@ -1,6 +1,8 @@
 package Patient;
 
-public class PatientClass {
+import Id.Id;
+
+public class PatientClass extends Id {
     private int ID;
     private String name;
     private String dateOfBirthday;
