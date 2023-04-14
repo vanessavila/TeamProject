@@ -1,104 +1,122 @@
-package OrthodontistClinic;
+package DataBaseImplement;
+import Dbconnection.DatabaseConnections;
+import Patient.PatientClass;
 
-import java.sql.PreparedStatement;
+import java.sql.*;
 
-public class OrthodontistClinicClass implements OrthodontistClinicDaoIntrf {
-    Connection con;
+public class OrthodontistClinic implements DatabaseInterface {
+        Connection con;
 
-    @Override
-    public void createPatient(Patient pat) {
-        con=DBConnection.createDBConnection();
-        String query="insert into Patient values: ";
-        try{
-            PreparedStatement pst=con.PreparedStatement(query);
-            pst.setInt(parameterindex: 1, pat.getId());
-            pst.setString(parameterIndex: 2, pat.getName());
-            pst.setInt(parameterIndex: 3, pat.getDate());
-            int cnt=pst.executeUpdate();
-            if(cnt!=0)
-                System.out.println("Patient Validated!");
-        }catch(Exception ex){
+        @Override
+        public boolean createPatient(PatientClass pat) {
+            con= DatabaseConnections.createconnectiontoTeethTreatment();
+            String query="insert into Patient values: ";
+            try{
+                PreparedStatement pst=con.prepareStatement(query);
+                pst.setInt( 1, pat.getID());
+                pst.setString( 2, pat.getName());
+                pst.setString( 3, pat.getDateOfBirthday());
+                pst.setString( 4, pat.getDateOfTreatment());
+                pst.setString( 5, pat.getAddress());
+                pst.setInt( 6, pat.getAge());
+                pst.setString( 7, pat.getAllergies());
+                pst.setBoolean( 8, pat.isNeedspecialNeeds());
+                pst.setString( 9, pat.getTypeOfTreatment());
 
-        }
-    }
+                int cnt=pst.executeUpdate();
+                if(cnt!=0){
+                    return true;
+                }
 
-    @Override
-    public void showAllPatient() {
-        con=DBConnection.createDBConnection();
-        String query="select * from Patient";
-        System.out.println("Enter Patient details: ");
-        System.out.println("*****************");
-        System.out.format("%d\t%s\t%d\t%d\n", ID, "ID", "Name", "Date", "Age");
-        System.out.println("***********************");
-
-        try{
-            Statement pst=con.createStatement();
-            ResultSet result= stm2.executeQuery(query);
-            while(result.next()){
-                System.out.format("%d\t%s\t%d\t%d",
-                        result.getInt(columnIndex: 1),
-                result.getString(columnIndex: 2),
-                result.getDouble(columnIndex: 3),
-                result.getInt(columnIndex: 4);
-                System.out.println("******************");
-
+            }catch(Exception ex){
+               return false;
             }
-
-        }catch(Exception ex){
-            ex.printStackTrace();
+            return false;
         }
-    }
 
-    @Override
-    public void showPatientBasedonID(int id) {
-        con=DBConnection.createDBConnection();
-        String query="select * from patient where id=" +id);
-        try {
-            Statement stm2=con.createStatement();
-            ResultSet result= stm2.executeQuery(query);
-            while(result.next()){
-                System.out.format("%d\t%s\t%d\t%d",
-                        result.getInt(columnIndex: 1),
-                result.getString(columnIndex: 2),
-                result.getDouble(columnIndex: 3),
-                result.getInt(columnIndex: 4);
-                System.out.println("******************");
+        @Override
+        public void showAllPatient() {
+            con= DatabaseConnections.createconnectiontoTeethTreatment();
+            String query="select * from Patient";
+            System.out.println("Enter Patient details: ");
+            System.out.println("*****************");
+            System.out.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s", "ID", "Name", "DateofBirth", "DateofTreatment", "Address", "Age", "Allergies", "NeedsSpecialNeeds", "TypeOfTreatment");
+            System.out.println("***********************");
+
+            try{
+                Statement stm2 =con.createStatement();
+                ResultSet result= stm2.executeQuery(query);
+                while(result.next()){
+                    System.out.format("%d\t%s\t%s\t%s\t%s\t%s\t%s\t%b\t%s",
+                            result.getInt(1),
+                    result.getString(2),
+                    result.getString(3),
+                    result.getString(4),
+                    result.getString(5),
+                    result.getInt(6),
+                    result.getString(7),
+                    result.getBoolean(8),
+                    result.getString(9));
+
+
+                    System.out.println("******************");
+
+                }
+
+            }catch(Exception ex){
+                ex.printStackTrace();
             }
         }
-    }
 
-    @Override
-    public void updatePatient (int id, String name) {
-        con = DBConnection.createDBConnection();
-        String query = "Update Patient";
-        try {
-            PreparedStatement pst = con.prepareStatement(query);
-            pst.setString(parameterIndex: 1, name);
-            pst.setInt(parameterIndex: 2, id);
-            int cnt= pst.executeUpdate();
-            if(cnt!=0)
-                System.out.println("Employee Details updated!");
+        @Override
+        public void showPatientBasedonID(int id) {
+            con=DatabaseConnections.createconnectiontoTeethTreatment();
+            String query="select * from patient where id=" + id;
+            try {
+                Statement stm2=con.createStatement();
+                ResultSet result= stm2.executeQuery(query);
+                while(result.next()){
+                    System.out.format("%d\t%s\t%s\t%s\t%s\t%s\t%s\t%b\t%s",
+                            result.getInt(1),
+                            result.getString(2),
+                            result.getString(3),
+                            result.getString(4),
+                            result.getString(5),
+                            result.getInt(6),
+                            result.getString(7),
+                            result.getBoolean(8),
+                            result.getString(9));
+                    System.out.println("******************");
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+// we will do this later since this is more complicated
+        @Override
+        public void updatePatient (int id, String itemtoUpdate, String newValue) {
 
-        }catch(Exception ex){
-            ex.printStackrace();
+        }
+
+        @Override
+        public void deletePatient (int id) {
+            con = DatabaseConnections.createconnectiontoTeethTreatment();
+            String query = "delete from employee where id =?";
+            try{
+                PreparedStatement pst = con.prepareStatement(query);
+                pst.setInt( 1, id);
+                int cnt = pst.executeUpdate();
+               if (cnt!=0) {
+                    System.out.println("Patient deleted!" + id);
+                }
+
+            } catch(Exception ex) {
+                ex.printStackTrace();
+            }
+            
+ 
         }
     }
-
-    @Override
-    public void deletePatient (int id) {
-        con = DBConnection.createDBConnection();
-        String query = "delete from employee where id =?";
-        try{
-            PreparedStatement pst = con.preparedStatement(query);
-            pst.setInt(parameterIndex: 1, id);
-            int cnt = pst.executeUpdate();
-            id(cnt!=0)
-            System.out.println("Patient deleted!" +id);
-
-        } catch(Exception ex) {
-            ex.printStackTrace();
-        }
-    }
-}
+    
 
 
