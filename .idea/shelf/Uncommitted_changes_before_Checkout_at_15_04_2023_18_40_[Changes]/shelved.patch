@@ -1,0 +1,90 @@
+Index: src/main/java/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import Patient.PatientClass;\r\n\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    static Scanner myinput = new Scanner(System.in);\r\n\r\n    public static void main(String[] args) {\r\n        boolean exitApplicaton = false;\r\n        String[] tables = {\"orthodontistclinic\", \"dentaldepartment\"};\r\n        System.out.println(\"Welcome to Dental Department!\\n\");\r\n        int ch = databasetoEnter() - 1;\r\n        System.out.println(\"You have entered the \" + tables[ch] + \" database\\n\");\r\n\r\n        do {\r\n            try {\r\n                long secondsToSleep = 2;\r\n                Thread.sleep(secondsToSleep * 500);\r\n            } catch (InterruptedException ie) {\r\n                Thread.currentThread().interrupt();\r\n            }\r\n            int CrudNumber = CrudOption();\r\n\r\n            switch (CrudNumber) {\r\n                case 1 -> CreatePatient();\r\n                case 2 -> showAllPatient();\r\n                case 3 -> showPatientById();\r\n                case 4 -> UpdatePatient();\r\n                case 5 -> DeletePatient();\r\n                case 6 -> exitApplicaton = true;\r\n            }\r\n        } while (!exitApplicaton) ;\r\n\r\n    }\r\n\r\n    public static int databasetoEnter() {\r\n        System.out.println(\"Which database do you want to enter\\n\");\r\n        System.out.println(\"1. Orthodontist Clinic\\n\");\r\n        System.out.println(\"2. Dental Department\\n\");\r\n        int ch = myinput.nextInt();\r\n        switch (ch) {\r\n            case 1:\r\n                return 1;\r\n            case 2:\r\n                return 2;\r\n            default:\r\n                System.out.println(\"Please enter a valid number | 1 | 2\\n\");\r\n                System.out.println(\"1. Orthodontist Clinic\\n\");\r\n                System.out.println(\"2. Dental Department\\n\");\r\n                return databasetoEnter();\r\n        }\r\n    }\r\n\r\n    public static int CrudOption() {\r\n        System.out.println();\r\n        System.out.println(\"1. Create Patient\\n\");\r\n        System.out.println(\"2. Show All Patient\\n\");\r\n        System.out.println(\"3. Show Patient by Id\\n\");\r\n        System.out.println(\"4. Update Patient\\n\");\r\n        System.out.println(\"5. Delete Patient\\n\");\r\n        System.out.println(\"6. Exit Application\\n\");\r\n        System.out.println(\" Please enter your choice\\n\");\r\n        int CrudOption = myinput.nextInt();\r\n        if (CrudOption > 0 && CrudOption <= 6) {\r\n            return CrudOption;\r\n        } else {\r\n            System.out.println(\"Please enter a valid number | 1 | 2 | 3 | 4 | 5 | 6\\n\");\r\n            return CrudOption();\r\n        }\r\n\r\n    }\r\n\r\n    public static void CreatePatient(){\r\n\r\n    }\r\n    public static void showAllPatient(){\r\n\r\n    }\r\n\r\n    public static void showPatientById(){\r\n\r\n    }\r\n\r\n    public static void UpdatePatient(){\r\n\r\n    }\r\n\r\n    public static void DeletePatient(){\r\n\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/Main.java b/src/main/java/Main.java
+--- a/src/main/java/Main.java	
++++ b/src/main/java/Main.java	
+@@ -1,11 +1,12 @@
++import Id.Id;
+ import Patient.PatientClass;
+ 
+ import java.util.Scanner;
+ 
+-public class Main {
++public class Main extends Id {
+     static Scanner myinput = new Scanner(System.in);
+ 
+-    public static void main(String[] args) {
++    public static void main(String[] args)  {
+         boolean exitApplicaton = false;
+         String[] tables = {"orthodontistclinic", "dentaldepartment"};
+         System.out.println("Welcome to Dental Department!\n");
+@@ -65,6 +66,7 @@
+             return CrudOption;
+         } else {
+             System.out.println("Please enter a valid number | 1 | 2 | 3 | 4 | 5 | 6\n");
++            System.out.println("The options are \n");
+             return CrudOption();
+         }
+ 
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_06_04_2023_18_27_[Changes]" date="1680802067412" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 06/04/2023 18:27 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"77a66cb3-3197-4346-a792-5048fe32fb53\" name=\"Changes\" comment=\"AddingIdtoPatientclass\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/Patient/PatientClass.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/Patient/PatientClass.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"importingSettings\">\r\n      <MavenImportingSettings>\r\n        <option name=\"workspaceImportEnabled\" value=\"true\" />\r\n      </MavenImportingSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2NeSC5aNUAe5KKhie2QaNzlh2WS\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,\r\n    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Java spring/JDBC/Lib/mysql-connector-j-8.0.32.jar&quot;,\r\n    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,\r\n    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,\r\n    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"JUnit.TestingtheConnection\">\r\n    <configuration name=\"Unnamed\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"JdbcProjectforschool\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestingConnection.testCreateConnection\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"JdbcProjectforschool\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"TestingDbConnection.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"TestingDbConnection\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"TestingDbConnection.TestingConnection\" />\r\n      <option name=\"METHOD_NAME\" value=\"testCreateConnection\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestingtheConnection\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"JdbcProjectforschool\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"TestingDbConnection.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"TestingDbConnection\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"TestingDbConnection.TestingtheConnection\" />\r\n      <option name=\"METHOD_NAME\" value=\"\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"TestingtheConnection.testCreateConnectiontoOrtho\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"JdbcProjectforschool\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"TestingDbConnection.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <option name=\"PACKAGE_NAME\" value=\"TestingDbConnection\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"TestingDbConnection.TestingtheConnection\" />\r\n      <option name=\"METHOD_NAME\" value=\"testCreateConnectiontoOrtho\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Unnamed\" />\r\n      <item itemvalue=\"JUnit.TestingtheConnection.testCreateConnectiontoOrtho\" />\r\n      <item itemvalue=\"JUnit.TestingConnection.testCreateConnection\" />\r\n      <item itemvalue=\"JUnit.TestingtheConnection\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.TestingtheConnection\" />\r\n        <item itemvalue=\"JUnit.TestingtheConnection.testCreateConnectiontoOrtho\" />\r\n        <item itemvalue=\"JUnit.TestingConnection.testCreateConnection\" />\r\n        <item itemvalue=\"JUnit.TestingtheConnection\" />\r\n        <item itemvalue=\"JUnit.TestingConnection.testCreateConnection\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"77a66cb3-3197-4346-a792-5048fe32fb53\" name=\"Changes\" comment=\"\" />\r\n      <created>1680022925652</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1680022925652</updated>\r\n      <workItem from=\"1680022926839\" duration=\"4273000\" />\r\n      <workItem from=\"1680739012507\" duration=\"2390000\" />\r\n      <workItem from=\"1680812460388\" duration=\"167000\" />\r\n      <workItem from=\"1680812656277\" duration=\"62000\" />\r\n      <workItem from=\"1680826250192\" duration=\"332000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Start\">\r\n      <created>1680024279676</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680024279676</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"TestingtheGetterandSetter\">\r\n      <created>1680802114384</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680802114384</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"TestingtheGetterandSetter\">\r\n      <created>1680802126511</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680802126511</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"TestingtheGetterandSetter\">\r\n      <created>1680803484489</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1680803484489</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"5\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Start\" />\r\n    <MESSAGE value=\"TestingtheGetterandSetter\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"TestingtheGetterandSetter\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,9 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="AddingIdtoPatientclass">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_04_2023_18_27__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2023_12_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_04_2023_12_37__Changes_.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/Patient/PatientClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patient/PatientClass.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -127,8 +128,8 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="JUnit.TestingtheConnection" />
+-        <item itemvalue="JUnit.TestingtheConnection.testCreateConnectiontoOrtho" />
+         <item itemvalue="JUnit.TestingConnection.testCreateConnection" />
++        <item itemvalue="JUnit.TestingtheConnection.testCreateConnectiontoOrtho" />
+         <item itemvalue="JUnit.TestingtheConnection" />
+         <item itemvalue="JUnit.TestingConnection.testCreateConnection" />
+       </list>
+@@ -185,6 +186,7 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Start" />
+     <MESSAGE value="TestingtheGetterandSetter" />
+-    <option name="LAST_COMMIT_MESSAGE" value="TestingtheGetterandSetter" />
++    <MESSAGE value="AddingIdtoPatientclass" />
++    <option name="LAST_COMMIT_MESSAGE" value="AddingIdtoPatientclass" />
+   </component>
+ </project>
+\ No newline at end of file
