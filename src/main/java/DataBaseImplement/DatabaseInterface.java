@@ -8,7 +8,7 @@ public interface DatabaseInterface {
     void showAllPatient();
 
     void showPatientBasedonID(int id);
-    void updatePatient (int id, String itemtoUpdate, String newValue);
+    void updatePatient (int id, String itemtoUpdate, String newValue, int index);
 
     void deletePatient (int id);
 

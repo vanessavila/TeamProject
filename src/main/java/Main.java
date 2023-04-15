@@ -65,6 +65,7 @@ public class Main {
             return CrudOption;
         } else {
             System.out.println("Please enter a valid number | 1 | 2 | 3 | 4 | 5 | 6\n");
+            System.out.println("The options are as follows\n");
             return CrudOption();
         }
 
