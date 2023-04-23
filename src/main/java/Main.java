@@ -1,3 +1,4 @@
+import DataBaseImplement.OrthodontistClinic;
 import Patient.PatientClass;
 
 import java.util.Scanner;
@@ -34,20 +35,24 @@ public class Main {
     }
 
     public static int databasetoEnter() {
+        // using file create a password and username identification system
         System.out.println("Which database do you want to enter\n");
         System.out.println("1. Orthodontist Clinic\n");
         System.out.println("2. Dental Department\n");
         int ch = myinput.nextInt();
         switch (ch) {
-            case 1:
+            case 1 -> {
                 return 1;
-            case 2:
+            }
+            case 2 -> {
                 return 2;
-            default:
+            }
+            default -> {
                 System.out.println("Please enter a valid number | 1 | 2\n");
                 System.out.println("1. Orthodontist Clinic\n");
                 System.out.println("2. Dental Department\n");
                 return databasetoEnter();
+            }
         }
     }
 
