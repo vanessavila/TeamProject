@@ -24,12 +24,12 @@ public class DatabaseConnections {
         return connection;
     }
 
-    public static Connection CreatetoConnectionToPassWord(){
+    public static Connection CreatetoConnectionTouserdetails(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver"); // getting the driver
             // creating the connection with the database
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/password?useSSL=false"
+                    "jdbc:mysql://localhost:3306/Password?useSSL=false"
                     ,"root"
                     ,"Password");
 

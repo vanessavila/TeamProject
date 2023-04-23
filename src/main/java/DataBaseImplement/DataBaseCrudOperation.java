@@ -6,8 +6,9 @@ import Patient.PatientClass;
 import java.sql.*;
 import java.util.Objects;
 
-public class OrthodontistClinic  extends Id implements DatabaseInterface  {
+public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
     Connection con;
+
 
     @Override
     public boolean createPatient(PatientClass pat,String DatabaseName) {
@@ -143,6 +144,32 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
+    }
+
+    @Override
+    public String GetPassword(String DatabaseName){
+        con = DatabaseConnections.CreatetoConnectionTouserdetails();
+        PreparedStatement statement;
+        try {
+            statement = con.prepareStatement("SELECT Password FROM " + DatabaseName);
+            ResultSet resultSet = statement.executeQuery();
+           return resultSet.getString(1);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void SetPassword(String password , String DatabaseName){
+      con = DatabaseConnections.CreatetoConnectionTouserdetails();
+        String query = "update " + DatabaseName;
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1,password);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 
