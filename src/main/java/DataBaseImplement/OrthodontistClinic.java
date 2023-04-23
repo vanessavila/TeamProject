@@ -10,9 +10,9 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
     Connection con;
 
     @Override
-    public boolean createPatient(PatientClass pat) {
+    public boolean createPatient(PatientClass pat,String DatabaseName) {
         con= DatabaseConnections.createconnectiontoTeethTreatment();
-        String query="insert into orthodontistclinic values: ";
+        String query="insert into " + DatabaseName + " values: ";
         try{
             PreparedStatement pst=con.prepareStatement(query);
             pst.setInt( 1, pat.getID());
@@ -38,12 +38,14 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
     }
 
     @Override
-    public void showAllPatient() {
+    public void showAllPatient(String DatabaseName) {
         con= DatabaseConnections.createconnectiontoTeethTreatment();
-        String query="select * from orthodontistclinic";
+        String query="select * from " + DatabaseName;
         System.out.println("Enter Patient details: ");
         System.out.println("*****************");
-        System.out.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s", "ID", "Name", "DateofBirth", "DateofTreatment", "Address", "Age", "Allergies", "NeedsSpecialNeeds", "TypeOfTreatment");
+        System.out.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
+                "ID", "Name", "DateofBirth", "DateofTreatment", "Address", "Age",
+                "Allergies", "NeedsSpecialNeeds", "TypeOfTreatment");
         System.out.println("***********************");
 
         try{
@@ -72,9 +74,9 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
     }
 
     @Override
-    public void showPatientBasedonID(int id) {
+    public void showPatientBasedonID(int id, String DatabaseName) {
         con=DatabaseConnections.createconnectiontoTeethTreatment();
-        String query="select * from orthodontistclinic where id=" + id;
+        String query="select * from " + DatabaseName + " where id=" + id;
         try {
             Statement stm2=con.createStatement();
             ResultSet result= stm2.executeQuery(query);
@@ -96,12 +98,12 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
         }
     }
     @Override
-    public void updatePatient (int id, String itemtoUpdate, String newValue, int index) {
+    public void updatePatient (int id, String itemtoUpdate, String newValue, int index, String DatabaseName) {
         // take 3 things
         //id to know which person to update
 
         con = DatabaseConnections.createconnectiontoTeethTreatment();
-        String query = "update orthodontistclinic set " + itemtoUpdate + " = ? where id = ?";
+        String query = "update " + DatabaseName + " set " + itemtoUpdate + " = ? where id = ?";
         try {
             PreparedStatement ps = con.prepareStatement(query);
             if (Objects.equals(itemtoUpdate, "Id") || Objects.equals(itemtoUpdate, "age")){
@@ -126,9 +128,9 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
     }
 
     @Override
-    public void deletePatient (int id) {
+    public void deletePatient (int id, String DatabaseName) {
         con = DatabaseConnections.createconnectiontoTeethTreatment();
-        String query = "delete from orthodontistclinic where id =?";
+        String query = "delete from " + DatabaseName + " where id =?";
         try{
             PreparedStatement pst = con.prepareStatement(query);
             pst.setInt( 1, id);
@@ -141,9 +143,10 @@ public class OrthodontistClinic  extends Id implements DatabaseInterface  {
         } catch(Exception ex) {
             ex.printStackTrace();
         }
-
-
     }
+
+
+
 }
 
 

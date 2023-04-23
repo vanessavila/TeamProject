@@ -3,14 +3,14 @@ package DataBaseImplement;
 import Patient.PatientClass;
 
 public interface DatabaseInterface {
-    boolean createPatient(PatientClass pat);
+    boolean createPatient(PatientClass pat, String DatabaseName);
 
-    void showAllPatient();
+    void showAllPatient(String DatabaseName);
 
-    void showPatientBasedonID(int id);
-    void updatePatient (int id, String itemtoUpdate, String newValue, int index);
+    void showPatientBasedonID(int id, String DatabaseName);
+    void updatePatient (int id, String itemtoUpdate, String newValue, int index ,String DatabaseName);
 
-    void deletePatient (int id);
+    void deletePatient (int id,String DatabaseName);
 
 
 
