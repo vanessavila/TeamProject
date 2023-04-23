@@ -1,14 +1,13 @@
-import DataBaseImplement.OrthodontistClinic;
-import Patient.PatientClass;
+import DataBaseImplement.DataBaseCrudOperation;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
     static Scanner myinput = new Scanner(System.in);
-
+  static  String[] tables = {"orthodontistclinic", "dentaldepartment"};
     public static void main(String[] args) {
         boolean exitApplicaton = false;
-        String[] tables = {"orthodontistclinic", "dentaldepartment"};
         System.out.println("Welcome to Dental Department!\n");
         int ch = databasetoEnter() - 1;
         System.out.println("You have entered the " + tables[ch] + " database\n");
@@ -34,6 +33,28 @@ public class Main {
 
     }
 
+    public static boolean VerifyDetails(String DatabaseName){
+        DataBaseCrudOperation db = new DataBaseCrudOperation();
+        int count = 0;
+        System.out.println();
+        System.out.println("Please enter the password to enter the database for " +
+                DatabaseName + "\n");
+        String password = myinput.nextLine();
+        while (count < 3) {
+            if (Objects.equals(password, db.GetPassword(DatabaseName))) {
+                return true;
+            } else {
+                System.out.println("Wrong password entered\n");
+                System.out.println("Please try again\n");
+                count++;
+            }
+        }
+        System.out.println("You have entered the wrong password 3 times\n");
+        System.out.println("Please try again later\n");
+        System.exit(0);
+        return false;
+    }
+
     public static int databasetoEnter() {
         // using file create a password and username identification system
         System.out.println("Which database do you want to enter\n");
@@ -42,9 +63,11 @@ public class Main {
         int ch = myinput.nextInt();
         switch (ch) {
             case 1 -> {
+                VerifyDetails(tables[ch - 1]);
                 return 1;
             }
             case 2 -> {
+                VerifyDetails(tables[ch - 1]);
                 return 2;
             }
             default -> {
@@ -55,6 +78,7 @@ public class Main {
             }
         }
     }
+
 
     public static int CrudOption() {
         System.out.println();

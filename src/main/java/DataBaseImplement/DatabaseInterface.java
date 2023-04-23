@@ -12,6 +12,8 @@ public interface DatabaseInterface {
 
     void deletePatient (int id,String DatabaseName);
 
+    String GetPassword (String databaseName);
 
+    void SetPassword (String password, String databaseName);
 
 }
