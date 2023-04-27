@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="adding create patient method &#10;along with barebones of other methods">
+    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="spelling errors">
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +168,7 @@
       <workItem from="1682028913076" duration="46000" />
       <workItem from="1682177476982" duration="2021000" />
       <workItem from="1682612100539" duration="2268000" />
-      <workItem from="1682617846119" duration="4014000" />
+      <workItem from="1682617846119" duration="4317000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
@@ -212,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682621951776</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="spelling errors">
+      <created>1682622228019</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682622228019</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +243,7 @@
     <MESSAGE value="Non-Hard-Coding plus adding Password Connection" />
     <MESSAGE value="adding create patient method to main" />
     <MESSAGE value="adding create patient method &#10;along with barebones of other methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding create patient method &#10;along with barebones of other methods" />
+    <MESSAGE value="spelling errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="spelling errors" />
   </component>
 </project>

@@ -28,8 +28,8 @@ public class Main {
                 case 1 -> createPatient();
                 case 2 -> showAllPatient();
                 case 3 -> showPatientById();
-                case 4 -> UpdatePatient();
-                case 5 -> DeletePatient();
+                case 4 -> updatePatient();
+                case 5 -> deletePatient();
                 case 6 -> exitApplicaton = true;
             }
         } while (!exitApplicaton) ;
