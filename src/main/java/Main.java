@@ -12,9 +12,9 @@ public class Main {
 
     public static void main(String[] args) {
         boolean exitApplicaton = false;
-        System.out.println("Welcome to Dental Department!\n");
+        System.out.println("Welcome to Dental Clinic!\n");
         int ch = databasetoEnter() - 1;
-        System.out.println("You have entered the " + tables[ch] + " database\n");
+        System.out.println("You have entered the " + tables[ch] + " department\n");
 
         do {
             try {
@@ -104,7 +104,8 @@ public class Main {
 
     }
 
-    public static void createPatient(PatientClass patient,String DatabaseName){
+    public static void createPatient(int ch){
+        String DatabaseName = tables[ch];
         PatientClass pat = new PatientClass();
         System.out.println("Enter ID: ");
         int ID = myInput.nextInt();
@@ -132,14 +133,14 @@ public class Main {
         pat.setAge(age);
         pat.setNeedspecialNeeds(needspecialNeeds);
         pat.setTypeOfTreatment(typeOfTreatment);
-        implement.createPatient(pat);
+        implement.createPatient(pat, DatabaseName);
 
     }
     public static void showAllPatient(String DatabaseName){
         implement.showAllPatient();
     }
 
-    public static void showPatientById(int id, String DatabaseName){
+    public static void showPatientById(String DatabaseName){
         System.out.println("Enter Id: ");
         int patientId = myInput.nextInt();
         implement.showPatientBasedOnID(patientId);

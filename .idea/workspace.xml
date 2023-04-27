@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="spelling errors">
+    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="adding static method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
@@ -170,7 +170,7 @@
       <workItem from="1682177476982" duration="2021000" />
       <workItem from="1682612100539" duration="2268000" />
       <workItem from="1682617846119" duration="4714000" />
-      <workItem from="1682623699279" duration="1080000" />
+      <workItem from="1682623699279" duration="4374000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682622640680</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="adding static method">
+      <created>1682626572062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682626572062</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -253,6 +260,7 @@
     <MESSAGE value="adding create patient method to main" />
     <MESSAGE value="adding create patient method &#10;along with barebones of other methods" />
     <MESSAGE value="spelling errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="spelling errors" />
+    <MESSAGE value="adding static method" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding static method" />
   </component>
 </project>
