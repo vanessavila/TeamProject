@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="Adding Patient Class">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_18_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_04_2023_18_40__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_11_04_2023_16_01__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Rebasing_at_11_04_2023_16_01__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2023_18_41_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2023_18_41__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2023_22_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_04_2023_22_59__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_02_26__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2023_02_26__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/OrthodontistClinic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DataBaseCrudOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dbconnection/DatabaseConnections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dbconnection/DatabaseConnections.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,13 +40,6 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
   </component>
   <component name="ProjectId" id="2NeSC5aNUAe5KKhie2QaNzlh2WS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -177,6 +176,7 @@
       <workItem from="1681703793010" duration="2936000" />
       <workItem from="1682028913076" duration="46000" />
       <workItem from="1682177476982" duration="2021000" />
+      <workItem from="1682612100539" duration="1429000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
@@ -211,6 +211,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />

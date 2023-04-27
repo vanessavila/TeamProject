@@ -3,7 +3,7 @@ package DataBaseImplement;
 import Patient.PatientClass;
 
 public interface DatabaseInterface {
-    boolean createPatient(PatientClass pat, String DatabaseName);
+    boolean createPatient(PatientClass patient, String DatabaseName);
 
     void showAllPatient(String DatabaseName);
 

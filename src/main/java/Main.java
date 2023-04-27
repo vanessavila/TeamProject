@@ -1,14 +1,16 @@
 import DataBaseImplement.DataBaseCrudOperation;
+import DataBaseImplement.DatabaseInterface;
 
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner myinput = new Scanner(System.in);
+    static Scanner myInput = new Scanner(System.in);
   static  String[] tables = {"orthodontistclinic", "dentaldepartment"};
     public static void main(String[] args) {
         boolean exitApplicaton = false;
         System.out.println("Welcome to Dental Department!\n");
+        DatabaseInterface implement = new DataBaseCrudOperation();
         int ch = databasetoEnter() - 1;
         System.out.println("You have entered the " + tables[ch] + " database\n");
 
@@ -39,7 +41,7 @@ public class Main {
         System.out.println();
         System.out.println("Please enter the password to enter the database for " +
                 DatabaseName + "\n");
-        String password = myinput.nextLine();
+        String password = myInput.nextLine();
         while (count < 3) {
             if (Objects.equals(password, db.GetPassword(DatabaseName))) {
                 return true;
@@ -60,7 +62,7 @@ public class Main {
         System.out.println("Which database do you want to enter\n");
         System.out.println("1. Orthodontist Clinic\n");
         System.out.println("2. Dental Department\n");
-        int ch = myinput.nextInt();
+        int ch = myInput.nextInt();
         switch (ch) {
             case 1 -> {
                 VerifyDetails(tables[ch - 1]);
@@ -89,7 +91,7 @@ public class Main {
         System.out.println("5. Delete Patient\n");
         System.out.println("6. Exit Application\n");
         System.out.println(" Please enter your choice\n");
-        int CrudOption = myinput.nextInt();
+        int CrudOption = myInput.nextInt();
         if (CrudOption > 0 && CrudOption <= 6) {
             return CrudOption;
         } else {
@@ -101,6 +103,34 @@ public class Main {
     }
 
     public static void CreatePatient(){
+        PatientClass patient = new PatientClass();
+        System.out.println("Enter ID: ");
+        int ID = myInput.nextInt();
+        System.out.println("Enter Name: ");
+        String name = myInput.next();
+        System.out.println("Enter DOB: ");
+        String dateOfBirthday = myInput.next();
+        System.out.println("Enter Treatment Date: ");
+        String dateOfTreatment= myInput.next();
+        System.out.println("Enter Address: ");
+        String address = myInput.next();
+        System.out.println("Enter Age: ");
+        int age = myInput.nextInt();
+        System.out.println("Enter Allergies: ");
+        String allergies = myInput.next();
+        System.out.println("Is Special Needs?: ");
+        boolean needspecialNeeds = myInput.nextBoolean();
+        System.out.println("Enter Treatment Type: ");
+        String typeOfTreatment = myInput.next();
+        patient.setID(ID);
+        patient.setName(name);
+        patient.setDateOfBirthday(dateOfBirthday);
+        patient.setDateOfTreatment(dateOfTreatment);
+        patient.setAddress(address);
+        patient.setAge(age);
+        patient.setNeedspecialNeeds(needspecialNeeds);
+        patient.setTypeOfTreatment(typeOfTreatment);
+        implement.createPatient(patient);
 
     }
     public static void showAllPatient(){
@@ -116,6 +146,7 @@ public class Main {
     }
 
     public static void DeletePatient(){
+
 
     }
 
