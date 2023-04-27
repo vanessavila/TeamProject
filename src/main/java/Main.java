@@ -144,11 +144,11 @@ public class Main {
         implement.showPatientBasedOnID(patientId);
     }
 
-    public static void UpdatePatient(int id, String itemtoUpdate, String newValue, int index, String DatabaseName){
+    public static void updatePatient(int id, String itemtoUpdate, String newValue, int index, String DatabaseName){
         implement.updatePatient(,,);
     }
 
-    public static void DeletePatient(int id, String DatabaseName){
+    public static void deletePatient(int id, String DatabaseName){
         implement.deletePatient(id);
     }
 

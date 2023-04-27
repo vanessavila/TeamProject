@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="adding create patient method to main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DataBaseCrudOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DataBaseCrudOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" afterDir="false" />
+    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="adding create patient method &#10;along with barebones of other methods">
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +168,7 @@
       <workItem from="1682028913076" duration="46000" />
       <workItem from="1682177476982" duration="2021000" />
       <workItem from="1682612100539" duration="2268000" />
-      <workItem from="1682617846119" duration="3700000" />
+      <workItem from="1682617846119" duration="4014000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
@@ -208,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682613655633</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="adding create patient method &#10;along with barebones of other methods">
+      <created>1682621951776</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682621951776</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +235,7 @@
     <MESSAGE value="Non-Hard-Coding" />
     <MESSAGE value="Non-Hard-Coding plus adding Password Connection" />
     <MESSAGE value="adding create patient method to main" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding create patient method to main" />
+    <MESSAGE value="adding create patient method &#10;along with barebones of other methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding create patient method &#10;along with barebones of other methods" />
   </component>
 </project>
