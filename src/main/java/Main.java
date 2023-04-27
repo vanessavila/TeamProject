@@ -7,7 +7,9 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner myInput = new Scanner(System.in);
-  static  String[] tables = {"orthodontistclinic", "dentaldepartment"};
+    static String[] tables = {"orthodontistclinic", "dentaldepartment"};
+    static DatabaseInterface implement = new DataBaseCrudOperation();
+
     public static void main(String[] args) {
         boolean exitApplicaton = false;
         System.out.println("Welcome to Dental Department!\n");
@@ -22,7 +24,6 @@ public class Main {
                 Thread.currentThread().interrupt();
             }
             int CrudNumber = CrudOption();
-            DatabaseInterface implement = new DataBaseCrudOperation();
 
             switch (CrudNumber) {
                 case 1 -> createPatient();
