@@ -1,5 +1,6 @@
 import DataBaseImplement.DataBaseCrudOperation;
 import DataBaseImplement.DatabaseInterface;
+import Patient.PatientClass;
 
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,7 +11,6 @@ public class Main {
     public static void main(String[] args) {
         boolean exitApplicaton = false;
         System.out.println("Welcome to Dental Department!\n");
-        DatabaseInterface implement = new DataBaseCrudOperation();
         int ch = databasetoEnter() - 1;
         System.out.println("You have entered the " + tables[ch] + " database\n");
 
@@ -22,9 +22,10 @@ public class Main {
                 Thread.currentThread().interrupt();
             }
             int CrudNumber = CrudOption();
+            DatabaseInterface implement = new DataBaseCrudOperation();
 
             switch (CrudNumber) {
-                case 1 -> CreatePatient();
+                case 1 -> createPatient();
                 case 2 -> showAllPatient();
                 case 3 -> showPatientById();
                 case 4 -> UpdatePatient();
@@ -102,8 +103,8 @@ public class Main {
 
     }
 
-    public static void CreatePatient(){
-        PatientClass patient = new PatientClass();
+    public static void createPatient(PatientClass patient,String DatabaseName){
+        PatientClass pat = new PatientClass();
         System.out.println("Enter ID: ");
         int ID = myInput.nextInt();
         System.out.println("Enter Name: ");
@@ -122,32 +123,33 @@ public class Main {
         boolean needspecialNeeds = myInput.nextBoolean();
         System.out.println("Enter Treatment Type: ");
         String typeOfTreatment = myInput.next();
-        patient.setID(ID);
-        patient.setName(name);
-        patient.setDateOfBirthday(dateOfBirthday);
-        patient.setDateOfTreatment(dateOfTreatment);
-        patient.setAddress(address);
-        patient.setAge(age);
-        patient.setNeedspecialNeeds(needspecialNeeds);
-        patient.setTypeOfTreatment(typeOfTreatment);
-        implement.createPatient(patient);
+        pat.setID(ID);
+        pat.setName(name);
+        pat.setDateOfBirthday(dateOfBirthday);
+        pat.setDateOfTreatment(dateOfTreatment);
+        pat.setAddress(address);
+        pat.setAge(age);
+        pat.setNeedspecialNeeds(needspecialNeeds);
+        pat.setTypeOfTreatment(typeOfTreatment);
+        implement.createPatient(pat);
 
     }
-    public static void showAllPatient(){
-
+    public static void showAllPatient(String DatabaseName){
+        implement.showAllPatient();
     }
 
-    public static void showPatientById(){
-
+    public static void showPatientById(int id, String DatabaseName){
+        System.out.println("Enter Id: ");
+        int patientId = myInput.nextInt();
+        implement.showPatientBasedOnID(patientId);
     }
 
-    public static void UpdatePatient(){
-
+    public static void UpdatePatient(int id, String itemtoUpdate, String newValue, int index, String DatabaseName){
+        implement.updatePatient(,,);
     }
 
-    public static void DeletePatient(){
-
-
+    public static void DeletePatient(int id, String DatabaseName){
+        implement.deletePatient(id);
     }
 
 }

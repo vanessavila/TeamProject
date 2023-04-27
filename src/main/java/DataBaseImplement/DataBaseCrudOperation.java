@@ -11,23 +11,23 @@ public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
 
 
     @Override
-    public boolean createPatient(PatientClass pat,String DatabaseName) {
+    public boolean createPatient(PatientClass patient,String DatabaseName) {
         con= DatabaseConnections.createconnectiontoTeethTreatment();
         String query="insert into " + DatabaseName + " values: ";
         try{
             PreparedStatement pst=con.prepareStatement(query);
-            pst.setInt( 1, pat.getID());
-            pst.setString( 2, pat.getName());
-            pst.setString( 3, pat.getDateOfBirthday());
-            pst.setString( 4, pat.getDateOfTreatment());
-            pst.setString( 5, pat.getAddress());
-            pst.setInt( 6, pat.getAge());
-            pst.setString( 7, pat.getAllergies());
-            pst.setBoolean( 8, pat.isNeedspecialNeeds());
-            pst.setString( 9, pat.getTypeOfTreatment());
+            pst.setInt( 1, patient.getID());
+            pst.setString( 2, patient.getName());
+            pst.setString( 3, patient.getDateOfBirthday());
+            pst.setString( 4, patient.getDateOfTreatment());
+            pst.setString( 5, patient.getAddress());
+            pst.setInt( 6, patient.getAge());
+            pst.setString( 7, patient.getAllergies());
+            pst.setBoolean( 8, patient.isNeedspecialNeeds());
+            pst.setString( 9, patient.getTypeOfTreatment());
 
             int cnt=pst.executeUpdate();
-            addId(pat.getID());
+            addId(patient.getID());
             if(cnt!=0){
                 return true;
             }
@@ -42,7 +42,7 @@ public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
     public void showAllPatient(String DatabaseName) {
         con= DatabaseConnections.createconnectiontoTeethTreatment();
         String query="select * from " + DatabaseName;
-        System.out.println("Enter Patient details: ");
+        System.out.println("Patient details: ");
         System.out.println("*****************");
         System.out.format("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s",
                 "ID", "Name", "DateofBirth", "DateofTreatment", "Address", "Age",
