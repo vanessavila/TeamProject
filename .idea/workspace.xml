@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="all methods but update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DataBaseCrudOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DataBaseCrudOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Id/Id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Id/Id.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Patient/PatientClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Patient/PatientClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestingDbConnection/TestingtheConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestingDbConnection/TestingtheConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +175,7 @@
       <workItem from="1682612100539" duration="2268000" />
       <workItem from="1682617846119" duration="4714000" />
       <workItem from="1682623699279" duration="13275000" />
+      <workItem from="1682646404863" duration="5153000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>

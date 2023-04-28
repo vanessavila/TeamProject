@@ -82,7 +82,7 @@ public class Id {
         boolean canweRemove;
 
         try {
-            canweRemove = IsIdExist(table,identity);
+            canweRemove = IdExistInOtherTable(table,identity);
             if(canweRemove){
                 for (int i = 0; i < this.id.size(); i++) {
                     if (this.id.get(i) == identity) {
@@ -98,7 +98,24 @@ public class Id {
         return false;
     }
 
-    public boolean IsIdExist(String table,int identity) throws SQLException {
+    public boolean DoesIdExistInTable(String table, int id) {
+        String sqlQuery = "SELECT id FROM " + table + " WHERE id = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            ResultSet ids = preparedStatement.executeQuery(sqlQuery);
+            while (ids.next()) {
+                if (ids.getInt("id") == id) {
+                    return true;
+                }
+            }
+
+            return false;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private boolean IdExistInOtherTable(String table,int identity) throws SQLException {
         ResultSet tables = getTable();
 
         boolean check = checkiftableexist(tables, table);
