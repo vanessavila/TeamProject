@@ -9,7 +9,10 @@ import java.util.Objects;
 public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
     Connection con;
 
-
+//This is the class to handle all the Crud operation in the database
+    //We were originally going to write a new class for each database and hard code
+    //However we changed it and decide to write it in one class and use the database name as a parameter
+//This is the class that implements the interface
     @Override
     public boolean createPatient(PatientClass patient,String DatabaseName) {
         con= DatabaseConnections.createconnectiontoTeethTreatment();
@@ -25,7 +28,7 @@ public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
             pst.setString( 7, patient.getTypeOfTreatment());
 
             int cnt=pst.executeUpdate();
-            addId(patient.getID());
+            addId(patient.getID());//adding the id to main class
             if(cnt!=0){
                 return true;
             }
@@ -106,7 +109,8 @@ public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
         try {
             PreparedStatement ps = con.prepareStatement(query);
             if (Objects.equals(itemtoUpdate, "age")){
-                for (Character c : newValue.toCharArray()) {
+                for (Character c : newValue.toCharArray()) { // making sure the values are
+                    //Number using ascii table
                     if (c >= 48 && c <= 57){
 
                     }

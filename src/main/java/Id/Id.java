@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Id {
+    //This is the class that will all id in the database
     private final List<Integer> id = new ArrayList<>();
     //There two ways , one is if we use the different database way
 
@@ -78,12 +79,15 @@ public class Id {
     //So we need to check if the id is in the other table before we can remove it from this table
     //If not then we leave a chance with different patients having the same id which will
     //screw up our program
+
+    //This if for the Delete crud app
+    //We are checking to see if we can remove it from the list
     public boolean removeIdfromList(String table,int identity) {
         boolean canweRemove;
 
         try {
-            canweRemove = IdExistInOtherTable(table,identity);
-            if(canweRemove){
+            canweRemove = IdExistInOtherTable(table,identity); // if it exist then we can't
+            if(canweRemove){ // if we can then remove again we should try to implement binary searcu
                 for (int i = 0; i < this.id.size(); i++) {
                     if (this.id.get(i) == identity) {
                         this.id.remove(i);
@@ -97,7 +101,7 @@ public class Id {
         }
         return false;
     }
-
+//This is for the Update and checking to see if there is an id in the table
     public boolean DoesIdExistInTable(String table, int id) {
         String sqlQuery = "SELECT id FROM " + table + " WHERE id = ?";
         try {
@@ -114,18 +118,19 @@ public class Id {
             throw new RuntimeException(e);
         }
     }
-
+//Check if the id exist in the other table
     private boolean IdExistInOtherTable(String table,int identity) throws SQLException {
+        //Getting the table names
         ResultSet tables = getTable();
 
-        boolean check = checkiftableexist(tables, table);
-        if (!check){
-            return false;
-        }
-
+//this will consist all the id excluding the table that we are in
+        //We should try to do binary search if we have time but for now we will do it like this
         ArrayList <Integer> ids = new ArrayList<>();
 
         while (tables.next()) {
+            //While we are not in our table it will collect all the Id in the other tables
+            //and compare them with the id that we want to remove and if it there
+            //then we can't remove it from the list if it not then we can
             if (!tables.getString("TABLE_NAME").equals(table)) {
 
                 Statement statement = connection.createStatement();
@@ -147,21 +152,7 @@ public class Id {
 
     }
 
-    private boolean checkiftableexist(ResultSet tables, String table) {
-        try {
-            while (tables.next()) {
-                if (tables.getString("TABLE_NAME").equals(table)) {
-                    return true;
-                }
-            }
-            //We should make a custom exception here but we can do that later for now we will
-            // just return false
-            System.out.println("The table does not exist");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+
 
 
 
