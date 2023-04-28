@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="adding db name">
+    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="all methods but update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Id/Id.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Id/Id.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -171,7 +170,7 @@
       <workItem from="1682177476982" duration="2021000" />
       <workItem from="1682612100539" duration="2268000" />
       <workItem from="1682617846119" duration="4714000" />
-      <workItem from="1682623699279" duration="11448000" />
+      <workItem from="1682623699279" duration="13275000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
@@ -243,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682629894838</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="all methods but update">
+      <created>1682643082432</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682643082432</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,6 +276,7 @@
     <MESSAGE value="spelling errors" />
     <MESSAGE value="adding static method" />
     <MESSAGE value="adding db name" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding db name" />
+    <MESSAGE value="all methods but update" />
+    <option name="LAST_COMMIT_MESSAGE" value="all methods but update" />
   </component>
 </project>

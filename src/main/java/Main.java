@@ -151,6 +151,56 @@ public class Main {
     }
 
     public static void updatePatient(int ch){
+        Id id = new Id();
+        System.out.println("Enter ID: ");
+        String idToUpdate = myInput.next();
+        id.IsIdExist(idToUpdate, tables[ch]);
+
+        String[] updateOptions = {"1. ID", "2. Name", "3. DOB", "4. Date of Treatment", "5. Address", "6. Age", "7. Allergies", "8. Need Special Needs", "9. Type Of Treatment"};
+        for(String option : updateOptions){
+            System.out.println(option);
+        }
+        System.out.println("Please Enter: ");
+        int input = myInput.nextInt();
+        String updateOption = updateOptions[input - 1];
+
+        switch(updateOption){
+            case 1
+                System.out.println("Enter ID: ");
+                int ID = myInput.nextInt();
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            case 7:
+
+                break;
+            case 8:
+
+                break;
+            case 9:
+
+                break;
+            default:
+                System.out.println("ERROR!");
+        }
+
+
+        String DatabaseName = tables[ch];
+        implement.updatePatient( id, itemtoUpdate, newValue, index , DatabaseName);
 
     }
 
