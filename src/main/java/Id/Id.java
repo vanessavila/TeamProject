@@ -98,7 +98,7 @@ public class Id {
         return false;
     }
 
-    private boolean IsIdExist(String table,int identity) throws SQLException {
+    public boolean IsIdExist(String table,int identity) throws SQLException {
         ResultSet tables = getTable();
 
         boolean check = checkiftableexist(tables, table);

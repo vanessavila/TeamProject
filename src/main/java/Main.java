@@ -1,7 +1,9 @@
 import DataBaseImplement.DataBaseCrudOperation;
 import DataBaseImplement.DatabaseInterface;
+import Id.Id;
 import Patient.PatientClass;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -136,22 +138,27 @@ public class Main {
         implement.createPatient(pat, DatabaseName);
 
     }
-    public static void showAllPatient(String DatabaseName){
-        implement.showAllPatient();
+    public static void showAllPatient(int ch){
+        String DatabaseName = tables[ch];
+        implement.showAllPatient(DatabaseName);
     }
 
-    public static void showPatientById(String DatabaseName){
-        System.out.println("Enter Id: ");
-        int patientId = myInput.nextInt();
-        implement.showPatientBasedOnID(patientId);
+    public static void showPatientById(int ch){
+        System.out.println("Enter ID: ");
+        int id = myInput.nextInt();
+        String DatabaseName = tables[ch];
+        implement.showPatientBasedonID(id, DatabaseName);
     }
 
-    public static void updatePatient(int id, String itemtoUpdate, String newValue, int index, String DatabaseName){
-        implement.updatePatient(,,);
+    public static void updatePatient(int ch){
+
     }
 
-    public static void deletePatient(int id, String DatabaseName){
-        implement.deletePatient(id);
+    public static void deletePatient(int ch){
+        System.out.println("Enter ID: ");
+        int id = myInput.nextInt();
+        String DatabaseName = tables[ch];
+        implement.deletePatient(id, DatabaseName);
     }
 
 }
