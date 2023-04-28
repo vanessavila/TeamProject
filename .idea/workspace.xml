@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="Adding Patient Class">
+    <list default="true" id="77a66cb3-3197-4346-a792-5048fe32fb53" name="Changes" comment="all methods but update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DatabaseInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DataBaseImplement/OrthodontistClinic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DataBaseImplement/DataBaseCrudOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Dbconnection/DatabaseConnections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dbconnection/DatabaseConnections.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,13 +32,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2NeSC5aNUAe5KKhie2QaNzlh2WS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,6 +52,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -177,6 +168,9 @@
       <workItem from="1681703793010" duration="2936000" />
       <workItem from="1682028913076" duration="46000" />
       <workItem from="1682177476982" duration="2021000" />
+      <workItem from="1682612100539" duration="2268000" />
+      <workItem from="1682617846119" duration="4714000" />
+      <workItem from="1682623699279" duration="13275000" />
     </task>
     <task id="LOCAL-00001" summary="Start">
       <created>1680024279676</created>
@@ -206,17 +200,83 @@
       <option name="project" value="LOCAL" />
       <updated>1680803484489</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="adding create patient method to main">
+      <created>1682613655633</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682613655633</updated>
+    </task>
+    <task id="LOCAL-00006" summary="adding create patient method &#10;along with barebones of other methods">
+      <created>1682621951776</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682621951776</updated>
+    </task>
+    <task id="LOCAL-00007" summary="spelling errors">
+      <created>1682622228019</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682622228019</updated>
+    </task>
+    <task id="LOCAL-00008" summary="spelling errors">
+      <created>1682622640680</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682622640680</updated>
+    </task>
+    <task id="LOCAL-00009" summary="adding static method">
+      <created>1682626572062</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682626572062</updated>
+    </task>
+    <task id="LOCAL-00010" summary="adding db name">
+      <created>1682629894838</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682629894838</updated>
+    </task>
+    <task id="LOCAL-00011" summary="all methods but update">
+      <created>1682643082432</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682643082432</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />
     <MESSAGE value="TestingtheGetterandSetter" />
     <MESSAGE value="Non-Hard-Coding" />
     <MESSAGE value="Non-Hard-Coding plus adding Password Connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Non-Hard-Coding plus adding Password Connection" />
+    <MESSAGE value="adding create patient method to main" />
+    <MESSAGE value="adding create patient method &#10;along with barebones of other methods" />
+    <MESSAGE value="spelling errors" />
+    <MESSAGE value="adding static method" />
+    <MESSAGE value="adding db name" />
+    <MESSAGE value="all methods but update" />
+    <option name="LAST_COMMIT_MESSAGE" value="all methods but update" />
   </component>
 </project>

@@ -1,16 +1,22 @@
 import DataBaseImplement.DataBaseCrudOperation;
+import DataBaseImplement.DatabaseInterface;
+import Id.Id;
+import Patient.PatientClass;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner myinput = new Scanner(System.in);
-  static  String[] tables = {"orthodontistclinic", "dentaldepartment"};
+    static Scanner myInput = new Scanner(System.in);
+    static String[] tables = {"orthodontistclinic", "dentaldepartment"};
+    static DatabaseInterface implement = new DataBaseCrudOperation();
+
     public static void main(String[] args) {
         boolean exitApplicaton = false;
-        System.out.println("Welcome to Dental Department!\n");
+        System.out.println("Welcome to Dental Clinic!\n");
         int ch = databasetoEnter() - 1;
-        System.out.println("You have entered the " + tables[ch] + " database\n");
+        System.out.println("You have entered the " + tables[ch] + " department\n");
 
         do {
             try {
@@ -22,11 +28,11 @@ public class Main {
             int CrudNumber = CrudOption();
 
             switch (CrudNumber) {
-                case 1 -> CreatePatient();
+                case 1 -> createPatient();
                 case 2 -> showAllPatient();
                 case 3 -> showPatientById();
-                case 4 -> UpdatePatient();
-                case 5 -> DeletePatient();
+                case 4 -> updatePatient();
+                case 5 -> deletePatient();
                 case 6 -> exitApplicaton = true;
             }
         } while (!exitApplicaton) ;
@@ -39,7 +45,7 @@ public class Main {
         System.out.println();
         System.out.println("Please enter the password to enter the database for " +
                 DatabaseName + "\n");
-        String password = myinput.nextLine();
+        String password = myInput.nextLine();
         while (count < 3) {
             if (Objects.equals(password, db.GetPassword(DatabaseName))) {
                 return true;
@@ -60,7 +66,7 @@ public class Main {
         System.out.println("Which database do you want to enter\n");
         System.out.println("1. Orthodontist Clinic\n");
         System.out.println("2. Dental Department\n");
-        int ch = myinput.nextInt();
+        int ch = myInput.nextInt();
         switch (ch) {
             case 1 -> {
                 VerifyDetails(tables[ch - 1]);
@@ -89,7 +95,7 @@ public class Main {
         System.out.println("5. Delete Patient\n");
         System.out.println("6. Exit Application\n");
         System.out.println(" Please enter your choice\n");
-        int CrudOption = myinput.nextInt();
+        int CrudOption = myInput.nextInt();
         if (CrudOption > 0 && CrudOption <= 6) {
             return CrudOption;
         } else {
@@ -100,23 +106,109 @@ public class Main {
 
     }
 
-    public static void CreatePatient(){
+    public static void createPatient(int ch){
+        String DatabaseName = tables[ch];
+        PatientClass pat = new PatientClass();
+        System.out.println("Enter ID: ");
+        int ID = myInput.nextInt();
+        System.out.println("Enter Name: ");
+        String name = myInput.next();
+        System.out.println("Enter DOB: ");
+        String dateOfBirthday = myInput.next();
+        System.out.println("Enter Treatment Date: ");
+        String dateOfTreatment= myInput.next();
+        System.out.println("Enter Address: ");
+        String address = myInput.next();
+        System.out.println("Enter Age: ");
+        int age = myInput.nextInt();
+        System.out.println("Enter Allergies: ");
+        String allergies = myInput.next();
+        System.out.println("Is Special Needs?: ");
+        boolean needspecialNeeds = myInput.nextBoolean();
+        System.out.println("Enter Treatment Type: ");
+        String typeOfTreatment = myInput.next();
+        pat.setID(ID);
+        pat.setName(name);
+        pat.setDateOfBirthday(dateOfBirthday);
+        pat.setDateOfTreatment(dateOfTreatment);
+        pat.setAddress(address);
+        pat.setAge(age);
+        pat.setNeedspecialNeeds(needspecialNeeds);
+        pat.setTypeOfTreatment(typeOfTreatment);
+        implement.createPatient(pat, DatabaseName);
 
     }
-    public static void showAllPatient(){
+    public static void showAllPatient(int ch){
+        String DatabaseName = tables[ch];
+        implement.showAllPatient(DatabaseName);
+    }
+
+    public static void showPatientById(int ch){
+        System.out.println("Enter ID: ");
+        int id = myInput.nextInt();
+        String DatabaseName = tables[ch];
+        implement.showPatientBasedonID(id, DatabaseName);
+    }
+
+    public static void updatePatient(int ch){
+        Id id = new Id();
+        System.out.println("Enter ID: ");
+        String idToUpdate = myInput.next();
+        id.IsIdExist(idToUpdate, tables[ch]);
+
+        String[] updateOptions = {"1. ID", "2. Name", "3. DOB", "4. Date of Treatment", "5. Address", "6. Age", "7. Allergies", "8. Need Special Needs", "9. Type Of Treatment"};
+        for(String option : updateOptions){
+            System.out.println(option);
+        }
+        System.out.println("Please Enter: ");
+        int input = myInput.nextInt();
+        String updateOption = updateOptions[input - 1];
+
+        switch(updateOption){
+            case 1
+                System.out.println("Enter ID: ");
+                int ID = myInput.nextInt();
+                break;
+            case 2:
+
+                break;
+            case 3:
+
+
+                break;
+            case 4:
+
+                break;
+            case 5:
+
+                break;
+            case 6:
+
+                break;
+            case 7:
+
+                break;
+            case 8:
+
+                break;
+            case 9:
+
+                break;
+            default:
+                System.out.println("ERROR!");
+        }
+
+
+        String DatabaseName = tables[ch];
+        implement.updatePatient( id, itemtoUpdate, newValue, index , DatabaseName);
 
     }
 
-    public static void showPatientById(){
-
-    }
-
-    public static void UpdatePatient(){
-
-    }
-
-    public static void DeletePatient(){
-
+    public static void deletePatient(int ch){
+        System.out.println("Enter ID: ");
+        int id = myInput.nextInt();
+        String DatabaseName = tables[ch];
+        implement.deletePatient(id, DatabaseName);
     }
 
 }
