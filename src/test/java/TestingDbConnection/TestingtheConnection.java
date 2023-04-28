@@ -10,9 +10,7 @@ import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.*;
 //Test passed 100% so the connection is created successfully
-@Execution(ExecutionMode.CONCURRENT) // this is so it can run the different tests at the same time
-//using multiple threads to run the tests and not one thread and we are able to do this because
-// we are using junit 5 and also we enabled it true in the properties file
+
 public class TestingtheConnection {
 
 

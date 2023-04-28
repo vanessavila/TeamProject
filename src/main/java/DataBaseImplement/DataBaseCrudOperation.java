@@ -9,7 +9,10 @@ import java.util.Objects;
 public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
     Connection con;
 
-
+//This is the class to handle all the Crud operation in the database
+    //We were originally going to write a new class for each database and hard code
+    //However we changed it and decide to write it in one class and use the database name as a parameter
+//This is the class that implements the interface
     @Override
     public boolean createPatient(PatientClass patient,String DatabaseName) {
         con= DatabaseConnections.createconnectiontoTeethTreatment();
@@ -20,14 +23,12 @@ public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
             pst.setString( 2, patient.getName());
             pst.setString( 3, patient.getDateOfBirthday());
             pst.setString( 4, patient.getDateOfTreatment());
-            pst.setString( 5, patient.getAddress());
-            pst.setInt( 6, patient.getAge());
-            pst.setString( 7, patient.getAllergies());
-            pst.setBoolean( 8, patient.isNeedspecialNeeds());
-            pst.setString( 9, patient.getTypeOfTreatment());
+            pst.setInt( 5, patient.getAge());
+            pst.setBoolean( 6, patient.isNeedspecialNeeds());
+            pst.setString( 7, patient.getTypeOfTreatment());
 
             int cnt=pst.executeUpdate();
-            addId(patient.getID());
+            addId(patient.getID());//adding the id to main class
             if(cnt!=0){
                 return true;
             }
@@ -99,37 +100,51 @@ public class DataBaseCrudOperation extends Id implements DatabaseInterface  {
         }
     }
     @Override
-    public void updatePatient (int id, String itemtoUpdate, String newValue, int index, String DatabaseName) {
+    public boolean updatePatient(int id, String itemtoUpdate, String newValue, int index, String DatabaseName) {
         // take 3 things
         //id to know which person to update
-
         con = DatabaseConnections.createconnectiontoTeethTreatment();
         String query = "update " + DatabaseName + " set " + itemtoUpdate + " = ? where id = ?";
+        itemtoUpdate.toLowerCase();
         try {
             PreparedStatement ps = con.prepareStatement(query);
-            if (Objects.equals(itemtoUpdate, "Id") || Objects.equals(itemtoUpdate, "age")){
+            if (Objects.equals(itemtoUpdate, "age")){
+                for (Character c : newValue.toCharArray()) { // making sure the values are
+                    //Number using ascii table
+                    if (c >= 48 && c <= 57){
+
+                    }
+                    else{
+                        return false;
+                    }
+                }
                 ps.setInt(index, Integer.parseInt(newValue));
 
             } else if (Objects.equals(itemtoUpdate, "needspecialNeeds")) {
-                ps.setBoolean(index, Boolean.parseBoolean(newValue));
-
+                if (itemtoUpdate == "true" || itemtoUpdate == "false") {
+                    ps.setBoolean(index, Boolean.parseBoolean(newValue));
+                }
+                else {
+                    System.out.println("Please enter true or False");
+                    return false;
+                }
             }else{
                 ps.setString(index,newValue);
             }
             int count = ps.executeUpdate();
             if (count > 0){
                 System.out.println("Employee updated successfully");
+                return true;
             }
-            else {
-                System.out.println("Employee not updated");
-            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return false;
     }
 
     @Override
-    public void deletePatient (int id, String DatabaseName) {
+    public void deletePatient(int id, String DatabaseName) {
         con = DatabaseConnections.createconnectiontoTeethTreatment();
         String query = "delete from " + DatabaseName + " where id =?";
         try{

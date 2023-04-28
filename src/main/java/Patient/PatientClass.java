@@ -7,7 +7,7 @@ public class PatientClass extends Id {
     private String name;
     private String dateOfBirthday;
     private String dateOfTreatment;
-    private String address;
+
     private int age;
     private String allergies;
     private boolean needspecialNeeds;
@@ -15,14 +15,6 @@ public class PatientClass extends Id {
 
     public PatientClass() {
 
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public boolean isNeedspecialNeeds() {
